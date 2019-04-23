@@ -30,9 +30,10 @@ pipeline {
           stage('Build and push Image') {
               steps {
                   container('docker'){
-                      sh "docker login --username $application_id --password $key ntweekly.azurecr.io"
+                    withCredentials([usernamePassword(credentialsId: 'acr_login', passwordVariable: 'key', usernameVariable: 'application_id')]) {
+                      sh "docker login --username $application_id --password $key stusreg.azurecr.io"
                       sh "docker build ."
-                      //sh "docker push ${ecrRepo}:${ecrTag}"
+                    }
                   }
               }
           }
