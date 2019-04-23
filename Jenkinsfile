@@ -36,8 +36,8 @@ pipeline {
               steps {
                   container('docker'){
                       sh "docker login --username $application_id --password $key ntweekly.azurecr.io"
-                      sh "docker build . # -t ${ecrRepo}:${ecrTag}"
-                      #sh "docker push ${ecrRepo}:${ecrTag}"
+                      sh "docker build .
+                      //sh "docker push ${ecrRepo}:${ecrTag}"
                   }
               }
           }
