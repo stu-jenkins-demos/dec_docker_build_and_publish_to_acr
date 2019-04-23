@@ -2,3 +2,4 @@
 
 A push to "acr" is simple enough, we just need to login using the "application id" and "key"
 See "https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal"
+Example uses a credential named "acr_login"
