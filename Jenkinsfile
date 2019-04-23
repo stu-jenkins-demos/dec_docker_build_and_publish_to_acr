@@ -36,8 +36,8 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'acr_login', passwordVariable: 'key', usernameVariable: 'application_id')]) {
                       //ecrRepo = 'stusreg.azurecr.io/dec_docker_build_and_publish_to_acr:latest'
                       sh "docker login --username $application_id --password $key stusreg.azurecr.io"
-                      sh "docker build ."
-                          sh "docker push ${env.ecrRepo}"
+                      sh "docker build . -t ${env.ecrRepo}"
+                      sh "docker push ${env.ecrRepo}"
                     }
                   }
               }
