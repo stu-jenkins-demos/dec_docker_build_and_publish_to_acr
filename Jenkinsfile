@@ -37,7 +37,7 @@ pipeline {
                       //ecrRepo = 'stusreg.azurecr.io/dec_docker_build_and_publish_to_acr:latest'
                       sh "docker login --username $application_id --password $key stusreg.azurecr.io"
                       sh "docker build ."
-                      //sh "docker push ${ecrRepo}:${ecrTag}"
+                          sh "docker push ${env.ecrRepo}"
                     }
                   }
               }
