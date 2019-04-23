@@ -11,13 +11,8 @@ pipeline {
         some-label: some-label-value
     spec:
       containers:
-      - name: awscli
-        image: ${awscliContainer}
-        command:
-        - cat
-        tty: true
       - name: docker
-        image: ${dockerContainer}
+        image: docker:18.06
         command: ["cat"]
         tty: true
         volumeMounts:
